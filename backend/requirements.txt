@@ -1,0 +1,16 @@
+flask
+joblib
+numpy
+requests
+supabase-py
+flask
+gunicorn
+joblib
+numpy
+scikit-learn
+tensorflow
+google-generativeai
+python-dotenv
+supabase
+pandas
+scipy
