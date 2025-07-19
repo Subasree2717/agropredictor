@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.env
+.env
+venv/
+env/
+*.log
+
+# Model files
+*.h5
+*.keras
+*.pkl
+*.joblib
+models/*.h5
+models/*.keras
+models/*.pkl
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Node.js (frontend)
+node_modules/
+build/
+dist/
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# React artifacts
+*.cache
+.yarn/
+npm-debug.log*
+
+# Environment config
+**/.env
+
+# Supabase generated files (optional)
+.supabase/
+
+
