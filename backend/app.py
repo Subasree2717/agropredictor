@@ -31,6 +31,32 @@ app = Flask(__name__)
 CORS(app)
 app.register_blueprint(weather_bp)
 
+import os
+import zipfile
+
+# ✅ Path to your zipped pickle files
+model_zip_path = os.path.join('models', 'models.zip')
+
+# ✅ Folder where unzipped .pkl files should go
+model_extract_path = 'models'
+
+# ✅ Extract only if pickle files not already present
+if os.path.exists(model_zip_path):
+    # Check if the key model files exist
+    expected_files = ['crop_model.pkl', 'fertilizer_model.pkl']
+    missing_files = [f for f in expected_files if not os.path.exists(os.path.join(model_extract_path, f))]
+
+    if missing_files:
+        print(f"[📦] Extracting {model_zip_path}...")
+        with zipfile.ZipFile(model_zip_path, 'r') as zip_ref:
+            zip_ref.extractall(model_extract_path)
+        print("[✅] Models extracted successfully.")
+    else:
+        print("[✔️] Models already extracted.")
+else:
+    print("[⚠️] No models.zip found in models folder.")
+
+
 # ✅ Load trained models and encoders
 crop_model = joblib.load('models/crop_model.pkl')
 fertilizer_model = joblib.load('models/fertilizer_model.pkl')
