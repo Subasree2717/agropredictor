@@ -1,3 +1,10 @@
+# Model files should not be tracked
+/models/*
+!.gitkeep
+
+# Env file
+.env
+pip install gdown
 .                                                                                   
 
 
