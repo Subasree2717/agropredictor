@@ -1,10 +1,6 @@
 
 
 
-# Env file
-.env
-pip install gdown
-.                                                                                   
 
 
 
